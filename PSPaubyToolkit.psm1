@@ -24,7 +24,7 @@
 #Requires -Version 3
 Set-StrictMode -Version Latest
 
-$functions = get-childitem *.ps1 -recurse -exclude *.tests.ps1
+$functions = get-childitem $PSScriptRoot\*.ps1 -recurse -exclude *.tests.ps1
 foreach ($function in $functions) {
     Write-Verbose "Importing script file $function.ps1"
     . $function
